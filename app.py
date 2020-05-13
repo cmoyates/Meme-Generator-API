@@ -63,7 +63,7 @@ app = Flask(__name__)
 @app.route("/api", methods=["GET"])
 def hello_world():
 
-    Query = str(request.args["Query"])
+    Query = str(request.args["query"])
     data = Query.split("|")
     print(data)
     global width, height, font
