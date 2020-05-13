@@ -70,7 +70,7 @@ def hello_world():
 
     img, width, height, font = ImportImage(data[0])
     c = "car.jpg"
-    newImg = DeepFry(AddText(img, data[1], data[2])) if (data[3]==1) else AddText(img, data[1], data[2])
+    newImg = DeepFry(AddText(img, data[1], data[2])) if (data[3]=="1") else AddText(img, data[1], data[2])
     newImg.save(c)
     tempFileObj = NamedTemporaryFile(mode='w+b',suffix='jpg')
     pilImage = open(c,'rb')
