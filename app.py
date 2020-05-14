@@ -27,6 +27,12 @@ def ImportImage(imgString):
     r = requests.get(imgString)
     img = Image.open(BytesIO(r.content))
     width, height = img.size
+    maxDim = max(width, height)
+    if maxDim > 1024:
+        scale = maxDim / 1024
+        width = round(width / scale)
+        height = round(height / scale)
+        img = img.resize((width, height))
     fontSize = min(width, height)/9
     font = ImageFont.truetype("impact.ttf", round(fontSize))
     return img, width, height, font
