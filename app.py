@@ -67,10 +67,10 @@ def hello_world():
     data = Query.split("|")
     print(data)
     global width, height, font
-
     img, width, height, font = ImportImage(data[0])
     c = "car.jpg"
     newImg = DeepFry(AddText(img, data[1], data[2])) if (data[3]=="1") else AddText(img, data[1], data[2])
+    newImg = newImg.convert("RGB")
     newImg.save(c)
     tempFileObj = NamedTemporaryFile(mode='w+b',suffix='jpg')
     pilImage = open(c,'rb')
