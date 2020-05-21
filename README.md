@@ -1,4 +1,4 @@
-# MemeGenerator
+# MemeGeneratorAPI
 
 This is the API used in My "Meme Generator" webapp.
 
