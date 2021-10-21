@@ -64,6 +64,10 @@ def AddText(img: Image, top_text: str, bottom_text: str, font: ImageFont, border
 
 app = FastAPI()
 
+@app.get("/")
+def return_root():
+    return "Still working!"
+
 @app.get("/api")
 def return_image(top: str, bottom: str, url: str, deep_fry: int):
     img, width, height, font = ImportImage(url)
